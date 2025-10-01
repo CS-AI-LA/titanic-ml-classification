@@ -13,7 +13,7 @@ import os
 import pandas as pd
 
 def load_data(path='data/train.csv'):
-    return pd.read_sv(path)
+    return pd.read_csv(path)
 
 def extract_title(df):
     df['Title'] = df['Name'].str.extract(r",\s*([^\.]+)\.", expand=False)
@@ -24,7 +24,7 @@ def extract_title(df):
     return df
 
 def fill_age(df):
-    df['Age'] = df.groupby[('Title','Pclass')]['Age'].apply(lambda x: x.fillna(x.median()))
+    df['Age'] = df.groupby(['Title','Pclass'])['Age'].transform(lambda x: x.fillna(x.median()))
     df['Age'] = df['Age'].fillna(df['Age'].median())
     return df
 
