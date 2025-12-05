@@ -68,7 +68,7 @@ def main():
     plt.ylabel('Actual')
     plt.title("Confusion Matrix")
     plt.tight_layout()
-    plt.show()                  # Show figure
+    plt.show(block=False)                  # Show figure
     plt.savefig('confusion_matrix.png')
     print("Confusion matrix saved as 'confusion_matrix.png'")
 
@@ -80,7 +80,7 @@ def main():
     plt.xticks(rotation=45, ha='right')
     plt.title("Feature Relevance")
     plt.tight_layout()
-    plt.show()                  # Show figure
+    plt.show(block=False)                  # Show figure
     plt.savefig("relevance_matrix.png")
     plt.close()
     print("Feature relevance plot saved as 'relevance_matrix.png'")
@@ -120,7 +120,7 @@ def main():
     ax.grid(True)
     plt.title("GMLVQ 2D Discriminative Projection")
     plt.tight_layout()
-    plt.show()                  # Show figure
+    plt.show(block=False)                  # Show figure
     plt.savefig("gmlvq_2d_projection.png")
     plt.close()
     print("2D projection plot saved as 'gmlvq_2d_projection.png'")
